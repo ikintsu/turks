@@ -1,0 +1,14 @@
+{
+    "production": {
+        "clientId": "",
+        "clientSecret": "",
+        "port": 53134,
+        "url": ""
+    },
+    "test": {
+        "clientId": "818333923590668308",
+        "clientSecret": "QAKFP3BQvM68hHEqWnoM-n24HLZ_eDxe",
+        "port": 53134,
+        "url": "https://discord.com/api/oauth2/authorize?client_id=818333923590668308&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fuser&response_type=token&scope=identify%20email%20guilds%20guilds.join"
+    }
+}

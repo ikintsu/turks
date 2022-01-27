@@ -1,0 +1,4 @@
+{
+  "uri": "mongodb+srv://tattoo:tattoo1@cluster0.d4xgn.mongodb.net/Tattoos?retryWrites=true&w=majority",
+  "db_name": "Tattoos"
+}
