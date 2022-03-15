@@ -23,7 +23,7 @@ dbo.connectToServer(function (err) {
   }
 
   // start the Express server
-  app.listen(3002, () => {
+  app.listen(process.env.PORT || 3002, () => {
       console.log('server running')
   });
 });
