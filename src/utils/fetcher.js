@@ -1,5 +1,5 @@
 // const url = "https://lacedapi.herokuapp.com";
-const url = "http://localhost:3002";
+const url = process.env.NODE_ENV === 'development' ? "http://localhost:3002" : process.env.REACT_APP_API;
 
 const get_tattoo = (discord_id, store) => {
     // console.log(JSON.stringify(json_query));

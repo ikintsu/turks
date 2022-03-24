@@ -38,11 +38,45 @@ async function get_single_tattoo(req, res) {
         });
 }
 
+async function delete_tattoo(req, res) {
+    console.log(req.body.url);
+
+    const dbConnect = dbo.getDb();
+    dbConnect
+        .collection('Tattoo')
+        .deleteOne({ image: req.body.url })
+        .then((result) => res.status(200).json({ count: result.deletedCount }))
+}
+
+async function update_tattoo(req, res) {
+    const { image, data } = req.body
+    const { tags, body } = data;
+
+    // console.log(req.body);
+    // res.status(201);
+
+    const dbConnect = dbo.getDb();
+    dbConnect
+        .collection('Tattoo')
+        .updateOne({ image }, { $set: {
+            reviewed: true,
+            is_tattoo: true,
+            data: data,
+            image: image
+        } }, { upsert: true })
+        .then(result => {
+            console.log('success');
+            res.status(201).json({ matchedCount: result.matchedCount, modifiedCount: result.modifiedCount });
+        })
+}
+
 
 
 
 
 module.exports = {
     post_tattoo,
-    get_single_tattoo
+    get_single_tattoo,
+    delete_tattoo,
+    update_tattoo
 }

@@ -29,18 +29,18 @@ export default function AccountForm(props) {
 
     const get_body = () => {
         return {
-            head: document.getElementById("head").checked, 
-            neck: document.getElementById("neck").checked, 
-            arm: document.getElementById("arm").checked, 
-            hand: document.getElementById("hand").checked, 
-            finger: document.getElementById("finger").checked, 
-            stomach: document.getElementById("stomach").checked, 
-            chest: document.getElementById("chest").checked, 
-            butt: document.getElementById("butt").checked, 
-            genital: document.getElementById("genital").checked, 
-            thigh: document.getElementById("thigh").checked, 
-            calf: document.getElementById("calf").checked, 
-            leg: document.getElementById("leg").checked, 
+            head: document.getElementById("head").checked,
+            neck: document.getElementById("neck").checked,
+            arm: document.getElementById("arm").checked,
+            hand: document.getElementById("hand").checked,
+            finger: document.getElementById("finger").checked,
+            stomach: document.getElementById("stomach").checked,
+            chest: document.getElementById("chest").checked,
+            butt: document.getElementById("butt").checked,
+            genital: document.getElementById("genital").checked,
+            thigh: document.getElementById("thigh").checked,
+            calf: document.getElementById("calf").checked,
+            leg: document.getElementById("leg").checked,
             feet: document.getElementById("feet").checked,
             back: document.getElementById("back").checked,
         };
@@ -80,9 +80,24 @@ export default function AccountForm(props) {
                     console.log("fuck")
                     window.location.reload();
                 }
+                document.getElementById("tags").value = "";
+                document.getElementById("head").checked = false;
+                document.getElementById("neck").checked = false;
+                document.getElementById("arm").checked = false;
+                document.getElementById("hand").checked = false;
+                document.getElementById("finger").checked = false;
+                document.getElementById("stomach").checked = false;
+                document.getElementById("chest").checked = false;
+                document.getElementById("butt").checked = false;
+                document.getElementById("genital").checked = false;
+                document.getElementById("thigh").checked = false;
+                document.getElementById("calf").checked = false;
+                document.getElementById("leg").checked = false;
+                document.getElementById("feet").checked = false;
+                document.getElementById("back").checked = false;
             })
             .catch(err => console.log(err));
-        
+
 
 
         console.log(data);
@@ -154,12 +169,12 @@ export default function AccountForm(props) {
             <Col>
                 <Button style={{ "marginRight": "0.25vw" }} onClick={(e) => {
                     submit(e, false)
-                    
+
                 }} variant="outline-danger" type="submit">
                     Not A Tattoo
                 </Button>
 
-                <Button style={{ "marginLeft": "0.25vw" }} onClick={e => {submit(e, true)}} variant="outline-primary" type="submit">
+                <Button style={{ "marginLeft": "0.25vw" }} onClick={e => { submit(e, true) }} variant="outline-primary" type="submit">
                     Submit
                 </Button>
             </Col>

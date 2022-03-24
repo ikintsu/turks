@@ -13,6 +13,8 @@ app.use(bodyParser.json());
 
 app.get('/gettattoo', routes.get_single_tattoo);
 app.post('/posttattoo', routes.post_tattoo);
+app.post('/delete', routes.delete_tattoo);
+app.post('/update', routes.update_tattoo);
 
 
 
